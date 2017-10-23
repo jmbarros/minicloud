@@ -1,0 +1,27 @@
+---
+  - name: creating directory
+    file:
+      path: /root/.ssh
+      state: directory
+      mode: 0700
+
+  - name: installing ssh key
+    authorized_key:
+      user: root
+      key: "{{ lookup('file', '/root/.ssh/id_rsa.pub') }}"
+
+  - name: clone ssh key to servers
+    copy:
+      src: /root/.ssh/id_rsa
+      dest: /root/.ssh/id_rsa
+      owner: root
+      group: root
+      mode: 0600
+
+  - name: clone ssh key to servers
+    copy:
+      src: /root/.ssh/id_rsa.pub
+      dest: /root/.ssh/id_rsa.pub
+      owner: root
+      group: root
+      mode: 0600

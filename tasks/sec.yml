@@ -1,0 +1,7 @@
+---
+  - name: test to see if selinux is running
+    selinux:
+      policy: targeted
+      state: permissive
+
+  

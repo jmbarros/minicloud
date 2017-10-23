@@ -1,0 +1,11 @@
+---
+  - name: configuring sshd and restarting 
+    copy:
+      src: "/etc/ansible/roles/jmbarros.icp/files/sshd_config"
+      dest: "/etc/ssh/sshd_config"
+      owner: root
+      group: root
+      mode: 0600
+
+  - name: reloading sshd
+    service: name=sshd state=restarted enabled=yes
