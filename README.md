@@ -1,7 +1,7 @@
 Common
 =========
 
-A common services for Centos
+Install an MINICLOUD ( based in IBM Private Cloud)
 
 Requirements
 ------------
